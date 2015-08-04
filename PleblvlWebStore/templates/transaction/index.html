@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}Product{% endblock %}
+{% block body %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+</script>
+	<h1>Product page</h1>
+  <form action="/transaction/charge" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="{{ key }}"
+    data-name="Pleblvl Software"
+    data-description="Ark Server Manager"
+    data-currency="cad"
+    data-amount="{{ amount }}">
+  </script>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{
+  "name": "PleblvlWebStore",
+  "version": "0.0.0",
+  "authors": [
+    "Matthew Ferderber <matthewferderber@gmail.com>"
+  ],
+  "description": "Polymer web store for Pleblvl",
+  "main": "run.py",
+  "keywords": [
+    "store",
+    "polymer",
+    "python"
+  ],
+  "license": "MIT",
+  "homepage": "http://pleblvl.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~1.0.8"
+  }
+}

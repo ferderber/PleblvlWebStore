@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<script type="text/javascript" src="{{ url_for('static', filename='bower_components/webcomponentsjs/webcomponents-lite.min.js') }}"></script>
+		<link rel="import" href="{{ url_for('static', filename='bower_components/polymer/polymer.html') }}"/>
+	</head>
+	<body>
+		<a href="/">Home</a>
+		<a href="/transaction">Transaction</a>
+		<a href="/about">About</a>
+		{% block body %}
+		{% endblock %}
+	</body>
+</html>
