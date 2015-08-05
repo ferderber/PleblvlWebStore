@@ -3,12 +3,9 @@ from flask import (Blueprint, flash, g, jsonify, redirect, render_template,
 
 # from pleblvlSales.utils import request_wants_json
 
-mod = Blueprint('home', __name__)
+mod = Blueprint('documentation', __name__)
 
 
 @mod.route('/')
 def index():
-	return render_template("home/index.html")
-@mod.route('/about')
-def about():
-	return render_template("home/about.html")
+	return render_template("documentation/index.html")

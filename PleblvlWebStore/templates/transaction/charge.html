@@ -1,6 +1,17 @@
-{% extends "layout.html" %}
-{% block title %}Product{% endblock %}
-{% block body %}
-	<h1>Charge page</h1>
-  <h3>You were charged ${{ amount }}</h3>
+{% extends "layout.html" %} {% block title %}Product{% endblock %} {% block head %}
+<meta charset="utf-8">
+<meta name="description" content="Pleblvl - Ark Server Manager"> {% endblock %} {% block body %}
+<div class="hero" style="background-image: url('{{ url_for('static', filename='images/bg.jpg')}}')">
+	<div class="container">
+		<div class="row center-align">
+			<h1>Thank you for your payment!</h1>
+			<h3>Pleblvl Ark Server Manager</h3>
+		</div>
+	</div>
+</div>
+<div class="container center-align">
+	<h4>Your product key is: </h4>
+	<p class="flow-text">A copy of your setup information is being sent to your email</p>
+	<p class="flow-text">For help with any problems: Contact <a href="email:admin@pleblvl.com">admin@pleblvl.com</a></p>
+</div>
 {% endblock %}

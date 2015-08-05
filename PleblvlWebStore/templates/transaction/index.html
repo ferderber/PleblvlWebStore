@@ -1,18 +1,66 @@
-{% extends "layout.html" %}
-{% block title %}Product{% endblock %}
-{% block body %}
+{% extends "layout.html" %} {% block title %}Product{% endblock %} {% block head %}
+<meta charset="utf-8">
+<meta name="description" content="Pleblvl - Ark Server Manager"> {% endblock %} {% block body %}
+<div class="hero" style="background-image: url('{{ url_for('static', filename='images/bg.jpg')}}')">
+	<div class="container">
+		<div class="row center-align">
+			<h1>Easily manage your ARK server</h1>
+			<h3>Pleblvl Ark Server Manager</h3>
+		</div>
+	</div>
+</div>
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-<script type="text/javascript">
-</script>
-	<h1>Product page</h1>
-  <form action="/transaction/charge" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="{{ key }}"
-    data-name="Pleblvl Software"
-    data-description="Ark Server Manager"
-    data-currency="cad"
-    data-amount="{{ amount }}">
-  </script>
-</form>
+<div class="container center-align">
+	<div class="features-list">
+		<h4>Features</h4>
+		<ul>
+			<li>Read and send chat messages</li>
+			<li>Execute server commands</li>
+			<li>Start/Stop server</li>
+			<li>Update Server</li>
+			<li>Ban/Unban users</li>
+			<li>Change Config values</li>
+		</ul>
+	</div>
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+
+	<button class="btn" id="customButton">Purchase</button>
+
+	<script>
+		var handler = StripeCheckout.configure({
+			key: '{{ key }}',
+			// image: '/img/documentation/checkout/marketplace.png',
+			token: function(token) {
+				console.log(token);
+				// Use the token to create the charge with a server-side script.
+				// You can access the token ID with `token.id`
+				$.post('/transaction/charge', token, function(data) {
+					console.log(data);
+				});
+			}
+		});
+
+		$('#customButton').on('click', function(e) {
+			// Open Checkout with further options
+			handler.open({
+				name: 'Pleblvl Software',
+				description: 'Ark Server Manager',
+				currency: "cad",
+				amount: {
+					{
+						amount
+					}
+				}
+			});
+			e.preventDefault();
+		});
+
+		// Close Checkout on page navigation
+		$(window).on('popstate', function() {
+			handler.close();
+		});
+	</script>
+
+
+</div>
 {% endblock %}

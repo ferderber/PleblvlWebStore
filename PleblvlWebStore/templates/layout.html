@@ -1,14 +1,58 @@
 <html>
-	<head>
-		<title>{% block title %}{% endblock %}</title>
-		<script type="text/javascript" src="{{ url_for('static', filename='bower_components/webcomponentsjs/webcomponents-lite.min.js') }}"></script>
-		<link rel="import" href="{{ url_for('static', filename='bower_components/polymer/polymer.html') }}"/>
-	</head>
-	<body>
-		<a href="/">Home</a>
-		<a href="/transaction">Transaction</a>
-		<a href="/about">About</a>
-		{% block body %}
-		{% endblock %}
-	</body>
+
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	{% block head %}{% endblock %}
+	<!--<script type="text/javascript" src="{{ url_for('static', filename='bower_components/webcomponentsjs/webcomponents-lite.min.js') }}"></script>-->
+	<!-- <link rel="import" href="{{ url_for('static', filename='bower_components/polymer/polymer.html') }}"/> -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.min.css')}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" />
+</head>
+
+<body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.min.js')}}"></script>
+
+	<!--	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+		<form action="/transaction/charge" method="POST">
+			<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-name="Pleblvl Software" data-description="Ark Server Manager" data-currency="cad" data-amount="{{ amount }}">
+			</script>
+		</form> -->
+	<nav role="navigation">
+		<div class="container">
+			<div class="row">
+				<div class="col s12 m3">
+					<a href="/" class="logo">
+						<div>Pleblvl</div>
+					</a>
+				</div>
+				<div class="col s12 m9">
+					<ul class="right">
+						<li><a href="/transaction">Buy now</a></li>
+						<li><a href="/documentation">Docs</a></li>
+						<li><a href="/about">About</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<main>
+		{% block body %} {% endblock %}
+	</main>
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+					© 2014 Matthew Ferderber
+					<a class="grey-text text-ligten-4 right" href="#!">Matthew Ferderber</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+
 </html>

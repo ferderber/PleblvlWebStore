@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, session, redirect, url_for, \
-	request, flash, g, jsonify
+from flask import (Blueprint, flash, g, jsonify, redirect, render_template,
+                   request, session, url_for)
 
 mod = Blueprint('product', __name__)
 
