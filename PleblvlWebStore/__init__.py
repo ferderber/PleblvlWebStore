@@ -1,5 +1,11 @@
 from flask import Flask, render_template, request
+from flask.ext.sqlalchemy import SQLAlchemy
 app = Flask(__name__)
+
+app.config.from_pyfile('config.py')
+db = SQLAlchemy(app)
+from .models import User, Product, userProducts
+db.create_all()
 from PleblvlWebStore.views import home
 from PleblvlWebStore.views import product
 from PleblvlWebStore.views import transaction
