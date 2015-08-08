@@ -1,3 +1,7 @@
 Flask
 stripe
 Flask-SQLAlchemy
+Flask-Testing
+Flask-Migrate
+PyCrypto
+pg8000

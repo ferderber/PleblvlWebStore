@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.script import Manager
+# from flask.ext.migrate import Migrate, MigrateCommand
 app = Flask(__name__)
 
 app.config.from_pyfile('config.py')
 db = SQLAlchemy(app)
-from .models import User, Product, userProducts
-db.create_all()
+
+from .models import User, Product, UserProduct
 from PleblvlWebStore.views import home
 from PleblvlWebStore.views import product
 from PleblvlWebStore.views import transaction

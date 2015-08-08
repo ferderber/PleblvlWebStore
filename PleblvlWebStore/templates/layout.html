@@ -3,8 +3,6 @@
 <head>
 	<title>{% block title %}{% endblock %}</title>
 	{% block head %}{% endblock %}
-	<!--<script type="text/javascript" src="{{ url_for('static', filename='bower_components/webcomponentsjs/webcomponents-lite.min.js') }}"></script>-->
-	<!-- <link rel="import" href="{{ url_for('static', filename='bower_components/polymer/polymer.html') }}"/> -->
 	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='bower_components/materialize/dist/css/materialize.min.css')}}" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" />
@@ -14,12 +12,6 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='bower_components/materialize/dist/js/materialize.min.js')}}"></script>
 
-	<!--	<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-
-		<form action="/transaction/charge" method="POST">
-			<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-name="Pleblvl Software" data-description="Ark Server Manager" data-currency="cad" data-amount="{{ amount }}">
-			</script>
-		</form> -->
 	<nav role="navigation">
 		<div class="container">
 			<div class="row">
